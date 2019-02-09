@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: whoami-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/auth-type: forward
+    ingress.kubernetes.io/auth-url: http://platform.192.168.99.108.nip.io/auth/realms/master/protocol/openid-connect/userinfo
+spec:
+  rules:
+  - host: platform.192.168.99.108.nip.io
+    http:
+      paths:
+      - path: /whoami/{gameId}
+        backend:
+          serviceName: whoami-service
+          servicePort: http
