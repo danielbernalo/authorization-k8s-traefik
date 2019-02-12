@@ -11,7 +11,7 @@ spec:
   - host: platform.192.168.99.108.nip.io
     http:
       paths:
-      - path: /whoami/{gameId}
+      - path: /
         backend:
           serviceName: whoami-service
           servicePort: http
