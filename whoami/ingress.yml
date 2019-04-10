@@ -5,10 +5,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     ingress.kubernetes.io/auth-type: forward
-    ingress.kubernetes.io/auth-url: http://platform.192.168.99.108.nip.io/auth/realms/master/protocol/openid-connect/userinfo
+    ingress.kubernetes.io/auth-url: http://authorization.default/validate/users/4000
 spec:
   rules:
-  - host: platform.192.168.99.108.nip.io
+  - host: platform.192.168.99.100.nip.io
     http:
       paths:
       - path: /

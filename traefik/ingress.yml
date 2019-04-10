@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   rules:
-  - host: traefik.192.168.99.108.nip.io
+  - host: traefik.192.168.99.100.nip.io
     http:
       paths:
       - backend:

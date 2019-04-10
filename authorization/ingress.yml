@@ -1,18 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: keycloak
+  name: authorization
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
-  tls:
-    - hosts:
-      - platform.192.168.99.108.nip.io
   rules:
-  - host: platform.192.168.99.108.nip.io
+  - host: platform.192.168.99.100.nip.io
     http:
       paths:
-      - path: /auth
+      - path: /validate
         backend:
-          serviceName: keycloak
+          serviceName: authorization
           servicePort: http
